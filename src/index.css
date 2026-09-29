@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Ensure every number on the entire website uses DM Sans (the menu card font) */
+@font-face {
+  font-family: 'DM Sans Digits';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: local('DM Sans'), url('https://fonts.gstatic.com/s/dmsans/v15/rP2Fp2ywxg089UriCZa4ET-j.woff2') format('woff2');
+  unicode-range: U+0030-0039, U+20B9, U+002B, U+002D, U+0025, U+002C, U+002E, U+003A, U+002F, U+0023; /* 0-9, ₹, +, -, %, ,, ., :, /, # */
+}
+
+:root {
+  --color-cream-bg: #FAF7F2;
+  --color-forest: #10271D;
+  --color-gold: #C59B37;
+}
+
+body {
+  background-color: var(--color-cream-bg);
+  color: #1A1E1C;
+  font-family: 'DM Sans Digits', "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11", "tnum" 1;
+  font-variant-numeric: tabular-nums lining-nums;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F4ECE0;
+}
+::-webkit-scrollbar-thumb {
+  background: #C59B37;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A67D25;
+}
+
+/* Elegant Indian motif decorative divider */
+.ornament-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+.ornament-line::before,
+.ornament-line::after {
+  content: "";
+  height: 1px;
+  width: 48px;
+  background: linear-gradient(to right, transparent, #C59B37, transparent);
+}
+
+/* Veg / Non-Veg Icons */
+.veg-icon {
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid #16A34A;
+  border-radius: 3px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  flex-shrink: 0;
+}
+.veg-icon::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #16A34A;
+}
+
+.non-veg-icon {
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid #DC2626;
+  border-radius: 3px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  flex-shrink: 0;
+}
+.non-veg-icon::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 7px solid #DC2626;
+}
+
+.egg-icon {
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid #D97706;
+  border-radius: 3px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  flex-shrink: 0;
+}
+.egg-icon::after {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #D97706;
+}
